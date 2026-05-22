@@ -1,46 +1,85 @@
 package main
 
-// src is the input for which we want to print the AST.
-//	src := `
-//package main
-//import "fmt"
-//func main() {
-//	fmt.Println("Hello, World!")
-//}
-//`
-//
-//	// Create the AST by parsing src.
-
 import (
+	"encoding/json"
 	"fmt"
 	"go/ast"
 	"go/parser"
 	"go/token"
+	"io"
+	"os"
 )
 
 func main() {
-	// src is the input for which we want to inspect the AST.
-	src := `
-package p
-import "fmt"
-func Stuff() {
-	fmt.Println("whatever")
-}
-`
-
-	// Create the AST by parsing src.
-	fset := token.NewFileSet() // positions are relative to fset
-	f, err := parser.ParseFile(fset, "src.go", src, 0)
+	gm, err := GoMetadataFromDirectory("zarf")
 	if err != nil {
 		panic(err)
 	}
 
+	gp, err := GoPackageDataFromGoMetadata(gm, false)
+	if err != nil {
+		panic(err)
+	}
+
+	// todo extract from go.mod
+	moduleName := "github.com/zarf-dev/zarf"
+
+	mermaid := GoPackagedataToMermaid(gp, moduleName)
+	om, err := os.Create("out.mermaid")
+	if err != nil {
+		panic(err)
+	}
+	_, err = om.Write([]byte(mermaid))
+	if err != nil {
+		panic(err)
+	}
+}
+
+func GoMetadataFromFile(file string) (*GoMetadata, error) {
+
+	fset := token.NewFileSet() // positions are relative to fset
+	// pass nil for src because we are parsing a file
+	f, err := parser.ParseFile(fset, file, nil, 0)
+	if err != nil {
+		return nil, err
+	}
+	if f == nil {
+		return nil, fmt.Errorf("the AST is nil at file %s", file)
+	}
+
+	gm := GoMetadata{
+		File:      file,
+		Package:   f.Name.Name,
+		Imports:   []string{},
+		Functions: []string{},
+	}
+
+	for _, imp := range f.Imports {
+		//fmt.Println(imp.Path.Value)
+		gm.Imports = append(gm.Imports, imp.Path.Value[1:len(imp.Path.Value)-1])
+	}
+
 	for _, tld := range f.Decls {
-		fmt.Printf("%+v\n", tld)
 		switch x := tld.(type) {
+
+		case *ast.GenDecl:
+			//fmt.Printf("%+v\n", x)
+			//if x.Tok == token.IMPORT {
+			//	for _, s := range x.Specs {
+			//		switch x := s.(type) {
+			//		case *ast.ImportSpec:
+			//			gm.Imports = append(gm.Imports, x.Path.Value)
+			//		default:
+			//			//panic(fmt.Sprintf("%T\n", x))
+			//		}
+			//	}
+			//}
+		case *ast.FuncDecl:
+			gm.Functions = append(gm.Functions, x.Name.Name)
 
 		default:
 			fmt.Printf("%T\n", x)
+
 			//case *ast.BasicLit:
 			//	fmt.Println("BasicLit")
 			//	s = x.Value
@@ -53,12 +92,15 @@ func Stuff() {
 		}
 	}
 
-	fset = token.NewFileSet() // positions are relative to fset
-	f, err = parser.ParseFile(fset, "", src, 0)
-	if err != nil {
-		panic(err)
-	}
+	return &gm, nil
+}
 
-	// Print the AST.
-	ast.Print(fset, f)
+func WriteJSON(v any, w io.Writer) error {
+	encoder := json.NewEncoder(w)
+	encoder.SetIndent("", "  ")
+	return encoder.Encode(v)
+}
+
+func PrintJSONable(v any) {
+	WriteJSON(v, os.Stdout)
 }

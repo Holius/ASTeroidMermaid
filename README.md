@@ -48,9 +48,7 @@ graph TD
   zarf/src/internal/pkgcfg --> zarf/src/api/v1alpha1
 ```
 
-Note that `zarf/src/api/v1alpha1` is erroneously missing from the mock GoPackagedata, </br>
-so it does not show any exported functions which is possible to happen in a real Go Module </br>
-since it's possible to only import exported variables.
+
 
 ## Run Locally
 

@@ -164,21 +164,6 @@ var mermaidInput = map[string]*GoPackagaedata{
 			"github.com/zarf-dev/zarf/src/api/v1alpha1",
 		},
 	},
-	"zarf-dev/zarf/src/api/v1alpha1": {
-		Files: []string{
-			"zarf/src/internal/git/repository.go",
-		},
-		Name: "git",
-		PublicFunctions: []string{
-			"Source",
-		},
-		PrivateFunctions: []string{
-			"checkoutRefAsBranch",
-		},
-		Imports: []string{
-			"context",
-		},
-	},
 }
 
 var mermaidExpected = `graph TD
@@ -186,9 +171,6 @@ var mermaidExpected = `graph TD
   end
   zarf --> zarf/src/cmd
   zarf --> zarf/src/config
-  subgraph zarf-dev/zarf/src/api/v1alpha1
-  Source
-  end
   subgraph zarf/src/cmd
   IsServiceURL
   ParseServiceURL

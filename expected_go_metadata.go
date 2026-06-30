@@ -14,7 +14,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"main",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/template/template.go",
 		Package: "template",
@@ -39,12 +40,6 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"NewObjects",
-			"WithValues",
-			"WithMetadata",
-			"WithBuild",
-			"WithConstants",
-			"WithVariables",
-			"WithPackage",
 			"Apply",
 			"ApplyToFile",
 			"funcMap",
@@ -59,7 +54,8 @@ var goMetadataExpected = []GoMetadata{
 			"mustToJSON",
 			"fromJSON",
 			"fromJSONArray",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/template/template_test.go",
 		Package: "template",
@@ -103,7 +99,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestToTOML",
 			"TestFromTOML",
 			"TestFromTOML_Errors",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/dns/dns.go",
 		Package: "dns",
@@ -121,7 +118,8 @@ var goMetadataExpected = []GoMetadata{
 			"ParseServiceURL",
 			"isRFC1918",
 			"IsLocalhost",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/dns/dns_test.go",
 		Package: "dns",
@@ -132,7 +130,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestServiceURL",
 			"TestIsLocalHost",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/api/v1alpha1/validate_test.go",
 		Package: "v1alpha1",
@@ -151,7 +150,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestValidateChart",
 			"TestValidateComponentActions",
 			"TestValidateComponentAction",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/api/v1alpha1/validate.go",
 		Package: "v1alpha1",
@@ -172,7 +172,8 @@ var goMetadataExpected = []GoMetadata{
 			"validateReleaseName",
 			"validateChart",
 			"validateManifest",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/pkgcfg/pkgcfg_test.go",
 		Package: "pkgcfg",
@@ -189,7 +190,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestParseDefinitionAndParseBuiltPackageAgreeOnSingleDoc",
 			"TestHandlerFor",
 			"TestMigrateDeprecated",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/pkgcfg/pkgcfg.go",
 		Package: "pkgcfg",
@@ -218,7 +220,8 @@ var goMetadataExpected = []GoMetadata{
 			"migrateScriptsToActions",
 			"migrateSetVariableToSetVariables",
 			"clearSetVariables",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/git/repository.go",
 		Package: "git",
@@ -242,10 +245,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"Open",
 			"Clone",
-			"Path",
-			"Push",
-			"checkoutRefAsBranch",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/git/git_test.go",
 		Package: "git",
@@ -256,7 +257,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestParseRef",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/git/repository_test.go",
 		Package: "git",
@@ -280,7 +282,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestRepository",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/git/git.go",
 		Package: "git",
@@ -291,7 +294,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ParseRef",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/git/fallback.go",
 		Package: "git",
@@ -300,9 +304,8 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/go-git/go-git/v5/plumbing",
 			"github.com/zarf-dev/zarf/src/pkg/utils/exec",
 		},
-		Functions: []string{
-			"gitCloneFallback",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/internal/packager/kustomize/build.go",
 		Package: "kustomize",
@@ -316,7 +319,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Build",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/destroy.go",
 		Package: "helm",
@@ -332,7 +336,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Destroy",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/zarf.go",
 		Package: "helm",
@@ -359,7 +364,8 @@ var goMetadataExpected = []GoMetadata{
 			"UpdateZarfRegistryValues",
 			"UpdateZarfAgentValues",
 			"findInitPackageWithComponent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/post-render_test.go",
 		Package: "helm",
@@ -384,7 +390,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestAddAgentIgnoreLabels",
 			"TestAgentMutatedKindsMatchesWebhook",
 			"TestProcessManifestContentEmptyObject",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/template.go",
 		Package: "helm",
@@ -413,9 +420,9 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TemplateChart",
 			"newTemplateRenderer",
-			"Run",
 			"getTemplatedManifests",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/common.go",
 		Package: "helm",
@@ -448,7 +455,8 @@ var goMetadataExpected = []GoMetadata{
 			"loadChartFromTarball",
 			"parseChartValues",
 			"createActionConfig",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/template_test.go",
 		Package: "helm",
@@ -464,7 +472,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestChartTemplate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/chart.go",
 		Package: "helm",
@@ -510,7 +519,8 @@ var goMetadataExpected = []GoMetadata{
 			"LoadChartData",
 			"migrateDeprecatedAPIs",
 			"handleDeprecations",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/images_test.go",
 		Package: "helm",
@@ -523,7 +533,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestFindAnnotatedImagesForChart",
 			"TestShouldIncludeImage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/post-render.go",
 		Package: "helm",
@@ -552,15 +563,10 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newRenderer",
-			"Run",
-			"adoptAndUpdateNamespaces",
-			"shouldAddAgentIgnoreLabels",
-			"editHelmResources",
-			"addLabelsToNestedPath",
 			"addAgentIgnoreLabels",
-			"setPackageLabels",
 			"processManifestContent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/images.go",
 		Package: "helm",
@@ -575,7 +581,8 @@ var goMetadataExpected = []GoMetadata{
 			"FindAnnotatedImagesForChart",
 			"findImagesRecursive",
 			"shouldIncludeImage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/helm/repo.go",
 		Package: "helm",
@@ -618,7 +625,8 @@ var goMetadataExpected = []GoMetadata{
 			"packageValues",
 			"buildChartDependencies",
 			"loadAndValidateChart",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/template/template.go",
 		Package: "template",
@@ -641,7 +649,8 @@ var goMetadataExpected = []GoMetadata{
 			"generateHtpasswd",
 			"debugPrintTemplateMap",
 			"getSanitizedTemplateMap",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/template/template_test.go",
 		Package: "template",
@@ -655,7 +664,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestGetSanitizedTemplateMap",
 			"TestGetZarfTemplatesForIPv6SeedRegistry",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/requirements/requirements_test.go",
 		Package: "requirements",
@@ -668,7 +678,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestValidateVersionRequirements",
 			"TestVersionRequirementsError_HighestVersion",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/packager/requirements/requirements.go",
 		Package: "requirements",
@@ -679,10 +690,10 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/config",
 		},
 		Functions: []string{
-			"Error",
 			"calculateRequiredVersion",
 			"ValidateVersionRequirements",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/split/split_test.go",
 		Package: "split",
@@ -698,7 +709,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestSplitFile",
 			"TestSplitDeleteExistingFiles",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/split/split.go",
 		Package: "split",
@@ -718,7 +730,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"SplitFile",
 			"ReassembleFile",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/healthchecks/healthchecks.go",
 		Package: "healthchecks",
@@ -741,8 +754,8 @@ var goMetadataExpected = []GoMetadata{
 			"WaitForReadyRuntime",
 			"WaitForReady",
 			"NewImmediateWatcher",
-			"Watch",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/healthchecks/healthchecks_test.go",
 		Package: "healthchecks",
@@ -768,7 +781,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestRunHealthChecks",
 			"TestFailedHealthChecks",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/gitea/gitea_test.go",
 		Package: "gitea",
@@ -778,7 +792,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestNewClient",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/gitea/gitea.go",
 		Package: "gitea",
@@ -795,12 +810,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"NewClient",
-			"DoRequest",
-			"CreateReadOnlyUser",
-			"UpdateGitUser",
-			"CreatePackageRegistryToken",
-			"AddReadOnlyUserToRepository",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-gitrepo_test.go",
 		Package: "hooks",
@@ -823,7 +834,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"createFluxGitRepoAdmissionRequest",
 			"TestFluxMutationWebhook",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/pods.go",
 		Package: "hooks",
@@ -850,7 +862,8 @@ var goMetadataExpected = []GoMetadata{
 			"mutatePod",
 			"mutatePodSubresource",
 			"mutateEphemeralContainers",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-repository.go",
 		Package: "hooks",
@@ -874,7 +887,8 @@ var goMetadataExpected = []GoMetadata{
 			"mutateRepositorySecret",
 			"populateArgoRepositoryPatchOperations",
 			"getCreds",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-gitrepo.go",
 		Package: "hooks",
@@ -897,7 +911,8 @@ var goMetadataExpected = []GoMetadata{
 			"NewGitRepositoryMutationHook",
 			"mutateGitRepo",
 			"populatePatchOperations",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-application_test.go",
 		Package: "hooks",
@@ -919,7 +934,8 @@ var goMetadataExpected = []GoMetadata{
 			"createArgoAppAdmissionRequest",
 			"TestArgoAppWebhook",
 			"TestArgoAppWebhookOCIWithNoGitServer",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-ocirepo_test.go",
 		Package: "hooks",
@@ -948,7 +964,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"createFluxOCIRepoAdmissionRequest",
 			"TestFluxOCIMutationWebhook",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/git_mutation_guard_test.go",
 		Package: "hooks",
@@ -967,7 +984,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestGitMutationHooksSkipWhenUnConfigured",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-ocirepo.go",
 		Package: "hooks",
@@ -995,7 +1013,8 @@ var goMetadataExpected = []GoMetadata{
 			"mutateOCIRepo",
 			"populateOCIRepoPatchOperations",
 			"isChart",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-helmrepo.go",
 		Package: "hooks",
@@ -1019,7 +1038,8 @@ var goMetadataExpected = []GoMetadata{
 			"NewHelmRepositoryMutationHook",
 			"mutateHelmRepo",
 			"populateHelmRepoPatchOperations",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/common.go",
 		Package: "hooks",
@@ -1043,7 +1063,8 @@ var goMetadataExpected = []GoMetadata{
 			"classifyURLSchemes",
 			"anyZarfServiceUsable",
 			"getManifestConfigMediaType",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-appproject_test.go",
 		Package: "hooks",
@@ -1066,7 +1087,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestArgoAppProjectWebhook",
 			"TestArgoAppProjectWebhookRegistryOnly",
 			"TestArgoAppProjectWebhookGitOnly",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-repository_test.go",
 		Package: "hooks",
@@ -1090,7 +1112,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestArgoRepoWebhook",
 			"TestArgoRepoWebhookRegistryOnly",
 			"TestArgoRepoWebhookGitOnly",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-applicationset_test.go",
 		Package: "hooks",
@@ -1109,7 +1132,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"createArgoAppSetAdmissionRequest",
 			"TestArgoAppSetWebhook",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/flux-helmrepo_test.go",
 		Package: "hooks",
@@ -1133,7 +1157,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"createFluxHelmRepoAdmissionRequest",
 			"TestFluxHelmMutationWebhook",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-appproject.go",
 		Package: "hooks",
@@ -1153,7 +1178,8 @@ var goMetadataExpected = []GoMetadata{
 			"NewAppProjectMutationHook",
 			"mutateAppProject",
 			"populateAppProjectPatchOperations",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/common_test.go",
 		Package: "hooks",
@@ -1185,7 +1211,8 @@ var goMetadataExpected = []GoMetadata{
 			"GetAvailableNodePort",
 			"nodePortRange",
 			"random64",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-applicationset.go",
 		Package: "hooks",
@@ -1203,7 +1230,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"NewApplicationSetMutationHook",
 			"mutateApplicationSet",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/pods_test.go",
 		Package: "hooks",
@@ -1226,7 +1254,8 @@ var goMetadataExpected = []GoMetadata{
 			"createPodAdmissionRequest",
 			"TestPodMutationWebhook",
 			"TestGetImageAnnotationKey",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/argocd-application.go",
 		Package: "hooks",
@@ -1252,7 +1281,8 @@ var goMetadataExpected = []GoMetadata{
 			"mutateGitURL",
 			"populateSingleSourceArgoApplicationPatchOperations",
 			"populateMultipleSourceArgoApplicationPatchOperations",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/hooks/utils_test.go",
 		Package: "hooks",
@@ -1276,7 +1306,8 @@ var goMetadataExpected = []GoMetadata{
 			"createTestClientWithZarfState",
 			"sendAdmissionRequest",
 			"verifyAdmission",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/operations/hook.go",
 		Package: "operations",
@@ -1286,9 +1317,9 @@ var goMetadataExpected = []GoMetadata{
 			"k8s.io/api/admission/v1",
 		},
 		Functions: []string{
-			"Execute",
 			"wrapperExecution",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/operations/patch.go",
 		Package: "operations",
@@ -1299,7 +1330,8 @@ var goMetadataExpected = []GoMetadata{
 			"ReplacePatchOperation",
 			"CopyPatchOperation",
 			"MovePatchOperation",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/http/admission/handler.go",
 		Package: "admission",
@@ -1319,8 +1351,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"NewHandler",
-			"Serve",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/http/proxy.go",
 		Package: "http",
@@ -1347,7 +1379,8 @@ var goMetadataExpected = []GoMetadata{
 			"isGitUserAgent",
 			"isPipUserAgent",
 			"isNpmUserAgent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/http/proxy_test.go",
 		Package: "http",
@@ -1364,7 +1397,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestGetTLSScheme",
 			"TestGetRequestURI",
 			"TestUserAgent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/internal/agent/start.go",
 		Package: "agent",
@@ -1386,7 +1420,8 @@ var goMetadataExpected = []GoMetadata{
 			"StartWebhook",
 			"StartHTTPProxy",
 			"startServer",
-		}},
+		},
+	},
 	{
 		File:      "zarf/src/types/runtime.go",
 		Package:   "types",
@@ -1399,7 +1434,8 @@ var goMetadataExpected = []GoMetadata{
 		Imports: []string{
 			"errors",
 		},
-		Functions: []string{}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/config/config.go",
 		Package: "config",
@@ -1419,7 +1455,8 @@ var goMetadataExpected = []GoMetadata{
 			"GetAbsCachePath",
 			"GetAbsHomePath",
 			"GetInitPackageName",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/logger/logger_test.go",
 		Package: "logger",
@@ -1435,7 +1472,8 @@ var goMetadataExpected = []GoMetadata{
 			"Test_ParseLevel",
 			"Test_ParseLevelErrors",
 			"TestContext",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/logger/logger.go",
 		Package: "logger",
@@ -1452,11 +1490,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"init",
-			"String",
 			"ParseLevel",
-			"ToLower",
 			"destinationString",
-			"LogValue",
 			"ConfigDefault",
 			"New",
 			"WithContext",
@@ -1464,8 +1499,8 @@ var goMetadataExpected = []GoMetadata{
 			"newDiscard",
 			"Default",
 			"SetDefault",
-			"Write",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/value/value_test.go",
 		Package: "value",
@@ -1485,7 +1520,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestDeepMerge",
 			"TestValidate",
 			"TestValidate_Errors",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/value/value.go",
 		Package: "value",
@@ -1504,19 +1540,11 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 		},
 		Functions: []string{
-			"Validate",
 			"ParseFiles",
 			"ParseLocalFile",
-			"DeepMerge",
-			"Extract",
-			"Set",
-			"Validate",
-			"Error",
 			"ValidateSchemaFile",
-			"Error",
-			"Error",
-			"Unwrap",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/pki/pki_test.go",
 		Package: "pki",
@@ -1532,7 +1560,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestCheckForExpiredCert1",
 			"TestGeneratePKIWithOptions",
 			"TestGetRemainingCertLifePercentage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/pki/pki.go",
 		Package: "pki",
@@ -1575,7 +1604,8 @@ var goMetadataExpected = []GoMetadata{
 			"CheckForExpiredCert",
 			"GenerateMTLSCerts",
 			"TransportWithKey",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/wait/wait_test.go",
 		Package: "wait",
@@ -1590,7 +1620,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestIsJSONPathWaitType",
 			"TestForNetwork",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/wait/wait.go",
 		Package: "wait",
@@ -1635,7 +1666,8 @@ var goMetadataExpected = []GoMetadata{
 			"waitForResourceCondition",
 			"ForNetwork",
 			"forNetwork",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/transform/image_test.go",
 		Package: "transform",
@@ -1647,7 +1679,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestImageTransformHost",
 			"TestImageTransformHostWithoutChecksum",
 			"TestParseImageRef",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/transform/image.go",
 		Package: "transform",
@@ -1661,7 +1694,8 @@ var goMetadataExpected = []GoMetadata{
 			"ImageTransformHost",
 			"ImageTransformHostWithoutChecksum",
 			"ParseImageRef",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/transform/artifact.go",
 		Package: "transform",
@@ -1678,7 +1712,8 @@ var goMetadataExpected = []GoMetadata{
 			"PipTransformURL",
 			"GenTransformURL",
 			"transformRegistryPath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/transform/git_test.go",
 		Package: "transform",
@@ -1692,7 +1727,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestGitURLtoFolderName",
 			"TestGitURLtoRepoName",
 			"TestGitURL",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/transform/artifact_test.go",
 		Package: "transform",
@@ -1705,7 +1741,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestNpmTransformURL",
 			"TestPipTransformURL",
 			"TestGenTransformURL",
-		}},
+		},
+	},
 	{
 		File:      "zarf/src/pkg/transform/types.go",
 		Package:   "transform",
@@ -1727,7 +1764,8 @@ var goMetadataExpected = []GoMetadata{
 			"GitURLtoFolderName",
 			"GitURLtoRepoName",
 			"GitURL",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/message/message.go",
 		Package: "message",
@@ -1745,7 +1783,8 @@ var goMetadataExpected = []GoMetadata{
 			"HorizontalRule",
 			"Table",
 			"TableWithWriter",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/packager.go",
 		Package: "packager",
@@ -1766,7 +1805,8 @@ var goMetadataExpected = []GoMetadata{
 			"overrideComponentNamespaces",
 			"overrideActionSetWaitNamespaces",
 			"overrideActionWaitNamespaces",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/update_test.go",
 		Package: "packager",
@@ -1779,7 +1819,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestUpdateNeeded",
 			"TestCreateUpdate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/remove.go",
 		Package: "packager",
@@ -1805,7 +1846,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Remove",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/find_images_test.go",
 		Package: "packager",
@@ -1821,7 +1863,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestFindImages",
 			"TestBuildImageMap",
 			"TestGetSortedImages",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/deploy_test.go",
 		Package: "packager",
@@ -1841,7 +1884,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestInternalServicesFor",
 			"TestVerifyPackageIsDeployableSkipsAgentCertCheckWhenAgentIsNotConfigured",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/publish.go",
 		Package: "packager",
@@ -1867,7 +1911,8 @@ var goMetadataExpected = []GoMetadata{
 			"PublishPackage",
 			"PublishSkeleton",
 			"pushToRemote",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/inspect.go",
 		Package: "packager",
@@ -1899,7 +1944,8 @@ var goMetadataExpected = []GoMetadata{
 			"InspectDefinitionResources",
 			"getTemplatedManifests",
 			"getTemplatedChart",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/generate.go",
 		Package: "packager",
@@ -1920,7 +1966,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Generate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/create_test.go",
 		Package: "packager",
@@ -1934,7 +1981,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestPackageCreatePublishArch",
 			"TestPackageCreateDifferentialOCIPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load.go",
 		Package: "packager",
@@ -1963,7 +2011,8 @@ var goMetadataExpected = []GoMetadata{
 			"LoadPackage",
 			"identifySource",
 			"GetPackageFromSourceOrCluster",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/update.go",
 		Package: "packager",
@@ -1984,7 +2033,8 @@ var goMetadataExpected = []GoMetadata{
 			"UpdateImages",
 			"createUpdate",
 			"updateNeeded",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load_test.go",
 		Package: "packager",
@@ -2008,7 +2058,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestLoadSplitPackage",
 			"TestIdentifySource",
 			"TestPackageFromSourceOrCluster",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/pull.go",
 		Package: "packager",
@@ -2043,7 +2094,8 @@ var goMetadataExpected = []GoMetadata{
 			"pullHTTPFile",
 			"supportsFiltering",
 			"isSkeleton",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/mirror.go",
 		Package: "packager",
@@ -2072,7 +2124,8 @@ var goMetadataExpected = []GoMetadata{
 			"PushImagesToRegistry",
 			"PushReposToRepository",
 			"pushComponentReposToRegistry",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/utils.go",
 		Package: "filters",
@@ -2082,7 +2135,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"includedOrExcluded",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/select_test.go",
 		Package: "filters",
@@ -2093,7 +2147,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Test_selectStateFilter_Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/deploy_test.go",
 		Package: "filters",
@@ -2109,7 +2164,8 @@ var goMetadataExpected = []GoMetadata{
 			"componentFromQuery",
 			"componentMatrix",
 			"TestDeployFilter_Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/diff.go",
 		Package: "filters",
@@ -2122,8 +2178,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ByDifferentialData",
-			"Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/select.go",
 		Package: "filters",
@@ -2133,8 +2189,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"BySelectState",
-			"Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/os.go",
 		Package: "filters",
@@ -2144,8 +2200,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ByLocalOS",
-			"Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/strat.go",
 		Package: "filters",
@@ -2154,9 +2210,9 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/api/v1alpha1",
 		},
 		Functions: []string{
-			"Apply",
 			"Combine",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/os_test.go",
 		Package: "filters_test",
@@ -2168,7 +2224,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestLocalOSFilter",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/empty_test.go",
 		Package: "filters",
@@ -2179,7 +2236,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestEmptyFilter_Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/deploy.go",
 		Package: "filters",
@@ -2194,8 +2252,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ForDeploy",
-			"Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/strat_test.go",
 		Package: "filters",
@@ -2206,15 +2264,18 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCombine",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/empty.go",
 		Package: "filters",
-		Imports: []string{"github.com/zarf-dev/zarf/src/api/v1alpha1"},
+		Imports: []string{
+			"github.com/zarf-dev/zarf/src/api/v1alpha1",
+		},
 		Functions: []string{
 			"Empty",
-			"Apply",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/diff_test.go",
 		Package: "filters",
@@ -2225,7 +2286,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCopyFilter",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/filters/utils_test.go",
 		Package: "filters",
@@ -2236,7 +2298,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Test_includedOrExcluded",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/dev.go",
 		Package: "packager",
@@ -2261,7 +2324,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"DevDeploy",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/lint.go",
 		Package: "packager",
@@ -2275,7 +2339,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Lint",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/packager_test.go",
 		Package: "packager",
@@ -2294,7 +2359,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestOverrideComponentNamespacesActions",
 			"Test_generateValuesOverrides",
 			"Test_generateValuesOverrides_Errors",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/lint_test.go",
 		Package: "packager",
@@ -2307,7 +2373,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestLintPackageWithImports",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/publish_test.go",
 		Package: "packager",
@@ -2346,7 +2413,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestPublishCopySHA",
 			"TestPullOCIConnectedExcludesImages",
 			"TestPublishCopyTag",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/deploy.go",
 		Package: "packager",
@@ -2391,18 +2459,12 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Deploy",
-			"isConnectedToCluster",
-			"deployComponents",
 			"internalServicesFor",
-			"deployInitComponent",
-			"deployComponent",
-			"installCharts",
-			"installManifests",
-			"verifyPackageIsDeployable",
 			"setupState",
 			"verifyClusterCompatibility",
 			"processComponentFiles",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/sbom_test.go",
 		Package: "layout",
@@ -2417,7 +2479,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestCreateImageSBOM",
 			"TestCreateImageSBOMNonExistentCachePath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/package.go",
 		Package: "layout",
@@ -2444,28 +2507,15 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/utils",
 		},
 		Functions: []string{
-			"DirPath",
 			"LoadFromTar",
 			"LoadFromDir",
-			"Cleanup",
-			"Error",
-			"ContainsSBOM",
-			"SignPackage",
-			"VerifyPackageSignature",
-			"IsSigned",
-			"GetSBOM",
-			"GetDocumentation",
 			"FormatDocumentFileName",
 			"GetDocumentationFileNames",
-			"GetComponentDir",
-			"GetImageDirPath",
-			"Archive",
-			"Files",
-			"FileName",
 			"validatePackageIntegrity",
 			"validatePackagePaths",
 			"isCleanPath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/path_test.go",
 		Package: "layout_test",
@@ -2478,14 +2528,16 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestResolvePackagePath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/layout.go",
 		Package: "layout",
 		Imports: []string{
 			"path/filepath",
 		},
-		Functions: []string{}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/sbom.go",
 		Package: "layout",
@@ -2535,7 +2587,8 @@ var goMetadataExpected = []GoMetadata{
 			"getNormalizedFileName",
 			"generateJSONList",
 			"getDefaultSyftConfig",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/package_test.go",
 		Package: "layout",
@@ -2567,7 +2620,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestValidatePackageIntegrity_ProvenanceFiles",
 			"TestSignPackage_PopulatesProvenanceFiles",
 			"TestValidatePackagePaths",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/assemble.go",
 		Package: "layout",
@@ -2619,7 +2673,8 @@ var goMetadataExpected = []GoMetadata{
 			"mergeAndWriteValuesFile",
 			"copyValuesSchema",
 			"createDocumentationTar",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/assemble_test.go",
 		Package: "layout",
@@ -2635,7 +2690,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestGetChecksum",
 			"TestCreateReproducibleTarballFromDir",
 			"TestValidateImageArchivesNoDuplicates",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/layout_test.go",
 		Package: "layout_test",
@@ -2658,7 +2714,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestGetSBOM",
 			"TestCreateAbsoluteSources",
 			"TestCreateAbsolutePathImports",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/layout/path.go",
 		Package: "layout",
@@ -2669,7 +2726,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ResolvePackagePath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/find_images.go",
 		Package: "packager",
@@ -2712,7 +2770,8 @@ var goMetadataExpected = []GoMetadata{
 			"appendToImageMapOCIRepo",
 			"getSortedImages",
 			"findWhyResources",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/pull_test.go",
 		Package: "packager",
@@ -2734,7 +2793,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestPullUncompressed",
 			"TestPullUnsupported",
 			"TestSupportsFiltering",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load/import_test.go",
 		Package: "load",
@@ -2759,7 +2819,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestResolveImportsValueMerge",
 			"TestValidateComponentCompose",
 			"TestCompatibleComponent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load/import.go",
 		Package: "load",
@@ -2799,7 +2860,8 @@ var goMetadataExpected = []GoMetadata{
 			"makePathRelativeTo",
 			"fixPaths",
 			"fixActionPaths",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load/load.go",
 		Package: "load",
@@ -2831,7 +2893,8 @@ var goMetadataExpected = []GoMetadata{
 			"fillActiveTemplate",
 			"reloadComponentTemplate",
 			"reloadComponentTemplatesInPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/load/load_test.go",
 		Package: "load",
@@ -2849,7 +2912,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestLoadPackageWithFlavors",
 			"TestPackageUsesFlavor",
 			"TestPackageDefinitionWithValuesSchema",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/inspect_test.go",
 		Package: "packager",
@@ -2867,7 +2931,8 @@ var goMetadataExpected = []GoMetadata{
 			"assertContainsAll",
 			"TestInspectDefinitionResources",
 			"TestInspectDefinitionResources_Errors",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/actions/actions.go",
 		Package: "actions",
@@ -2906,7 +2971,8 @@ var goMetadataExpected = []GoMetadata{
 			"actionRun",
 			"MatchAllRegex",
 			"parseAndSetValue",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/actions/actions_test.go",
 		Package: "actions",
@@ -2925,7 +2991,8 @@ var goMetadataExpected = []GoMetadata{
 			"Test_parseAndSetValue",
 			"Test_templateString",
 			"Test_parseAndSetValue_Errors",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/packager/create.go",
 		Package: "packager",
@@ -2947,7 +3014,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"Create",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/unpack_test.go",
 		Package: "images",
@@ -2964,7 +3032,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestGetRefFromManifest",
 			"TestUnpackMultipleImages",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/progress.go",
 		Package: "images",
@@ -2982,13 +3051,9 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"DefaultReport",
-			"Read",
-			"WriteTo",
-			"StartReporting",
-			"StopReporting",
 			"NewTrackedTarget",
-			"Push",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/push_test.go",
 		Package: "images",
@@ -3007,7 +3072,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestPush",
 			"verifyImageExists",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/unpack.go",
 		Package: "images",
@@ -3032,7 +3098,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"Unpack",
 			"getRefFromManifest",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/common.go",
 		Package: "images",
@@ -3073,7 +3140,8 @@ var goMetadataExpected = []GoMetadata{
 			"WithPullAuth",
 			"WithPushAuth",
 			"getSizeOfImage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/pull.go",
 		Package: "images",
@@ -3120,7 +3188,8 @@ var goMetadataExpected = []GoMetadata{
 			"getDockerEndpointHost",
 			"pullFromDockerDaemon",
 			"orasSave",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/progress_test.go",
 		Package: "images",
@@ -3131,7 +3200,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestStopReporting",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/pull_test.go",
 		Package: "images",
@@ -3157,7 +3227,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestCheckForIndex",
 			"TestPull",
 			"TestPullInvalidCache",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/images/push.go",
 		Package: "images",
@@ -3188,7 +3259,8 @@ var goMetadataExpected = []GoMetadata{
 			"addRefNameAnnotationToImages",
 			"copyImage",
 			"parseRegistryReference",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/feature/feature.go",
 		Package: "feature",
@@ -3198,7 +3270,6 @@ var goMetadataExpected = []GoMetadata{
 			"sync/atomic",
 		},
 		Functions: []string{
-			"String",
 			"IsEnabled",
 			"Set",
 			"setDefault",
@@ -3210,7 +3281,8 @@ var goMetadataExpected = []GoMetadata{
 			"AllUser",
 			"featuresToMap",
 			"init",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/feature/feature_test.go",
 		Package: "feature",
@@ -3235,7 +3307,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestAll",
 			"TestAllUser",
 			"TestAllDefault",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/push_package_test.go",
 		Package: "zoci_test",
@@ -3253,7 +3326,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestPushPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/utils.go",
 		Package: "zoci",
@@ -3269,7 +3343,8 @@ var goMetadataExpected = []GoMetadata{
 			"ReferenceFromMetadata",
 			"ReferenceFromMetadataWithOptions",
 			"GetInitPackageURL",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/push_test.go",
 		Package: "zoci",
@@ -3280,7 +3355,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestAnnotationsFromMetadata",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/common.go",
 		Package: "zoci",
@@ -3300,7 +3376,8 @@ var goMetadataExpected = []GoMetadata{
 			"NewRemote",
 			"GetOCICacheModifier",
 			"PlatformForSkeleton",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/pull.go",
 		Package: "zoci",
@@ -3322,12 +3399,8 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/utils",
 			"oras.land/oras-go/v2/content/file",
 		},
-		Functions: []string{
-			"PullPackage",
-			"AssembleLayers",
-			"LayersFromComponents",
-			"LayersFromImages",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/fetch.go",
 		Package: "zoci",
@@ -3340,10 +3413,8 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/internal/pkgcfg",
 			"github.com/zarf-dev/zarf/src/pkg/packager/layout",
 		},
-		Functions: []string{
-			"FetchZarfYAML",
-			"FetchImagesIndex",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/pull_test.go",
 		Package: "zoci_test",
@@ -3372,7 +3443,8 @@ var goMetadataExpected = []GoMetadata{
 			"writeVirtualPackageDef",
 			"buildVirtualPackage",
 			"TestAssembleLayers",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/push.go",
 		Package: "zoci",
@@ -3398,9 +3470,9 @@ var goMetadataExpected = []GoMetadata{
 			"oras.land/oras-go/v2/content/file",
 		},
 		Functions: []string{
-			"PushPackage",
 			"annotationsFromMetadata",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/zoci/copier.go",
 		Package: "zoci",
@@ -3413,7 +3485,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"CopyPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/interactive/prompt.go",
 		Package: "interactive",
@@ -3426,7 +3499,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"PromptVariable",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/interactive/components.go",
 		Package: "interactive",
@@ -3441,7 +3515,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"SelectOptionalComponent",
 			"SelectChoiceGroup",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/variables/templates_test.go",
 		Package: "variables",
@@ -3454,7 +3529,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestReplaceTextTemplate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/variables/templates.go",
 		Package: "variables",
@@ -3468,10 +3544,8 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/defenseunicorns/pkg/helpers/v2",
 			"github.com/zarf-dev/zarf/src/api/v1alpha1",
 		},
-		Functions: []string{
-			"GetAllTemplates",
-			"ReplaceTextTemplate",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/variables/common.go",
 		Package: "variables",
@@ -3481,10 +3555,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"New",
-			"SetApplicationTemplates",
-			"SetConstants",
-			"GetConstants",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/variables/variables.go",
 		Package: "variables",
@@ -3494,13 +3566,8 @@ var goMetadataExpected = []GoMetadata{
 			"strings",
 			"github.com/zarf-dev/zarf/src/api/v1alpha1",
 		},
-		Functions: []string{
-			"GetSetVariable",
-			"GetSetVariableMap",
-			"PopulateVariables",
-			"SetVariable",
-			"CheckVariablePattern",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/variables/variables_test.go",
 		Package: "variables",
@@ -3512,7 +3579,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestPopulateVariables",
 			"TestCheckVariablePattern",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/schema/schema.go",
 		Package: "schema",
@@ -3521,7 +3589,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"GetV1Alpha1Schema",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/schema/generate.go",
 		Package: "main",
@@ -3539,7 +3608,8 @@ var goMetadataExpected = []GoMetadata{
 			"main",
 			"generateV1Alpha1Schema",
 			"addYAMLExtensions",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/state/state.go",
 		Package: "state",
@@ -3556,33 +3626,18 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"AllServiceKeys",
 			"NewServiceSet",
-			"Has",
-			"Add",
 			"ParseServiceKey",
-			"AgentIsConfigured",
-			"IsInternal",
-			"IsConfigured",
-			"FillInEmptyValues",
-			"IsInternal",
-			"IsConfigured",
-			"FillInEmptyValues",
-			"ReconcilePort",
-			"IsInternal",
-			"IsConfigured",
-			"ShouldUseMTLS",
 			"CheckIfRegistryAddressOrCredsChanged",
-			"FillInEmptyValues",
 			"Default",
 			"Merge",
 			"DebugPrint",
 			"sanitizeState",
 			"WithPackageNamespaceOverride",
 			"WithPackageConnectivity",
-			"GetSecretName",
-			"GetPackageConnectivity",
 			"MergeInstalledChartsForComponent",
 			"LocalhostRegistryAddress",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/state/state_test.go",
 		Package: "state",
@@ -3600,7 +3655,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestMergeStateArtifact",
 			"TestMergeStateAgent",
 			"TestMergeInstalledChartsForComponent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/io_test.go",
 		Package: "utils",
@@ -3615,7 +3671,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestResolveCachePath",
 			"TestGetFinalExecutableCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/auth.go",
 		Package: "utils",
@@ -3634,7 +3691,8 @@ var goMetadataExpected = []GoMetadata{
 			"credentialParser",
 			"netrcParser",
 			"appendNetrcMachine",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/exec/exec.go",
 		Package: "exec",
@@ -3663,7 +3721,8 @@ var goMetadataExpected = []GoMetadata{
 			"LaunchURL",
 			"GetOSShell",
 			"IsPowershell",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/bytes.go",
 		Package: "utils",
@@ -3674,7 +3733,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"RoundUp",
 			"ByteFormat",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/cosign_test.go",
 		Package: "utils",
@@ -3684,7 +3744,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestShouldSign_KeyRefAlias",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/io.go",
 		Package: "utils",
@@ -3700,7 +3761,8 @@ var goMetadataExpected = []GoMetadata{
 			"MakeTempDir",
 			"GetFinalExecutablePath",
 			"GetFinalExecutableCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/bytes_test.go",
 		Package: "utils",
@@ -3710,7 +3772,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestByteFormat",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/cosign.go",
 		Package: "utils",
@@ -3732,14 +3795,13 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 		},
 		Functions: []string{
-			"ShouldSign",
-			"CheckOverwrite",
 			"DefaultSignBlobOptions",
 			"DefaultVerifyBlobOptions",
 			"CosignSignBlobWithOptions",
 			"CosignVerifyBlobWithOptions",
 			"GetCosignArtifacts",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/network.go",
 		Package: "utils",
@@ -3762,12 +3824,12 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 		},
 		Functions: []string{
-			"Error",
 			"parseChecksum",
 			"DownloadToFile",
 			"httpGetFile",
 			"parseRetryAfter",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/network_test.go",
 		Package: "utils",
@@ -3786,7 +3848,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestParseChecksum",
 			"TestDownloadToFile",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/image.go",
 		Package: "utils",
@@ -3807,7 +3870,8 @@ var goMetadataExpected = []GoMetadata{
 			"LoadOCIImage",
 			"AddImageNameAnnotation",
 			"SortImagesIndex",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/htpasswd.go",
 		Package: "utils",
@@ -3817,7 +3881,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"GetHtpasswdString",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/auth_test.go",
 		Package: "utils",
@@ -3833,7 +3898,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestMatchCredential",
 			"TestMatchCredentialInvalidURL",
 			"TestNetRCParser",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/utils/yaml.go",
 		Package: "utils",
@@ -3868,7 +3934,8 @@ var goMetadataExpected = []GoMetadata{
 			"FindYamlTemplates",
 			"SplitYAML",
 			"SplitYAMLToString",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/schema.go",
 		Package: "lint",
@@ -3887,7 +3954,8 @@ var goMetadataExpected = []GoMetadata{
 			"getSchemaFindings",
 			"runSchema",
 			"templateZarfObj",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/rules_test.go",
 		Package: "lint",
@@ -3902,7 +3970,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestUnpinnedImageWarning",
 			"TestUnpinnnedFileWarning",
 			"TestIsImagePinned",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/rules.go",
 		Package: "lint",
@@ -3922,7 +3991,8 @@ var goMetadataExpected = []GoMetadata{
 			"checkForUnpinnedRepos",
 			"checkForUnpinnedImages",
 			"checkForUnpinnedFiles",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/schema_test.go",
 		Package: "lint",
@@ -3940,7 +4010,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestValidatePackageSchema",
 			"TestYqCompat",
 			"TestFillObjTemplate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/findings_test.go",
 		Package: "lint",
@@ -3950,18 +4021,16 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestLintError",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/lint/findings.go",
 		Package: "lint",
 		Imports: []string{
 			"fmt",
 		},
-		Functions: []string{
-			"Error",
-			"OnlyWarnings",
-			"ItemizedDescription",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/archive/archive_test.go",
 		Package: "archive",
@@ -3982,7 +4051,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestCompressUnsupportedExtension",
 			"TestDecompressFiltered",
 			"TestDecompressOptions",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/archive/archive_traversal_test.go",
 		Package: "archive",
@@ -4020,7 +4090,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestMaliciousNestedArchive",
 			"TestValidateEntryName",
 			"TestValidateSymlink",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/archive/archive.go",
 		Package: "archive",
@@ -4056,7 +4127,8 @@ var goMetadataExpected = []GoMetadata{
 			"validateEntryName",
 			"validateSymlink",
 			"writeFile",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/pvc.go",
 		Package: "cluster",
@@ -4068,9 +4140,8 @@ var goMetadataExpected = []GoMetadata{
 			"k8s.io/apimachinery/pkg/api/errors",
 			"k8s.io/apimachinery/pkg/apis/meta/v1",
 		},
-		Functions: []string{
-			"UpdateGiteaPVC",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/secrets.go",
 		Package: "cluster",
@@ -4091,13 +4162,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"addRegistryAuthEntries",
-			"GenerateRegistryPullCreds",
-			"GenerateGitPullCreds",
-			"UpdateZarfManagedImageSecrets",
-			"UpdateZarfManagedGitSecrets",
-			"ApplyZarfManagedMTLSSecrets",
-			"GetServiceInfoFromRegistryAddress",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/distro.go",
 		Package: "cluster",
@@ -4107,7 +4173,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"detectDistro",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/zarf.go",
 		Package: "cluster",
@@ -4128,18 +4195,8 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 			"github.com/zarf-dev/zarf/src/pkg/state",
 		},
-		Functions: []string{
-			"GetDeployedZarfPackages",
-			"GetDeployedPackage",
-			"UpdateDeployedPackage",
-			"DeleteDeployedPackage",
-			"StripZarfLabelsAndSecretsFromNamespaces",
-			"RecordPackageDeployment",
-			"GetInstalledChartsForComponent",
-			"UpdateInternalArtifactServerToken",
-			"UpdateInternalGitServerSecret",
-			"InternalGitServerExists",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/tunnel.go",
 		Package: "cluster",
@@ -4166,28 +4223,11 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/state",
 		},
 		Functions: []string{
-			"ListConnections",
-			"NewTargetTunnelInfo",
-			"Connect",
-			"ConnectTunnelInfo",
-			"ConnectToZarfRegistryEndpoint",
-			"checkForZarfConnectLabel",
-			"findPodContainerPort",
 			"serviceInfoFromNodePortURL",
 			"WithListenAddress",
-			"NewTunnel",
-			"Wrap",
-			"Connect",
-			"Endpoints",
-			"ErrChan",
-			"HTTPEndpoints",
-			"FullURLs",
-			"Close",
-			"establish",
-			"getAttachablePodForResource",
-			"getAttachablePodForService",
 			"createDialer",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/pvc_test.go",
 		Package: "cluster",
@@ -4202,7 +4242,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestUpdateGiteaPVC",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/zarf_test.go",
 		Package: "cluster",
@@ -4221,7 +4262,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestGetInstalledChartsForComponentNamespaceOverride",
 			"TestGetDeployedPackage",
 			"TestInternalGitServerExists",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/secrets_test.go",
 		Package: "cluster",
@@ -4237,7 +4279,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestUpdateZarfManagedSecrets",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/distro_test.go",
 		Package: "cluster",
@@ -4249,7 +4292,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestDetectDistro",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/data.go",
 		Package: "cluster",
@@ -4275,9 +4319,9 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/utils/exec",
 		},
 		Functions: []string{
-			"HandleDataInjection",
 			"waitForPodsAndContainers",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/tunnel_test.go",
 		Package: "cluster",
@@ -4296,7 +4340,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestCheckForZarfConnectLabel",
 			"TestFindPodContainerPort",
 			"TestServiceInfoFromNodePortURL",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/injector.go",
 		Package: "cluster",
@@ -4330,17 +4375,11 @@ var goMetadataExpected = []GoMetadata{
 			"k8s.io/component-helpers/resource",
 		},
 		Functions: []string{
-			"StartInjection",
-			"CreateInjectorConfigMaps",
-			"StopInjection",
-			"createPayloadConfigMaps",
-			"getInjectorImageAndNode",
-			"GetInjectorDaemonsetImage",
 			"determinePauseImage",
 			"hasBlockingTaints",
 			"buildInjectionPod",
-			"createInjectorNodeportService",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/namespace.go",
 		Package: "cluster",
@@ -4357,11 +4396,11 @@ var goMetadataExpected = []GoMetadata{
 			"k8s.io/client-go/applyconfigurations/core/v1",
 		},
 		Functions: []string{
-			"DeleteZarfNamespace",
 			"NewZarfManagedApplyNamespace",
 			"NewZarfManagedNamespace",
 			"AdoptZarfManagedLabels",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/cluster_test.go",
 		Package: "cluster",
@@ -4392,7 +4431,8 @@ var goMetadataExpected = []GoMetadata{
 			"newFakeInitStateCluster",
 			"TestInitStateServicesGating",
 			"TestIgnoreExistingNamespacesForAgent",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/injector_test.go",
 		Package: "cluster",
@@ -4426,7 +4466,8 @@ var goMetadataExpected = []GoMetadata{
 			"setupCluster",
 			"TestGetInjectorImageAndNode",
 			"TestGetInjectorDaemonsetImage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/pkg/cluster/cluster.go",
 		Package: "cluster",
@@ -4461,19 +4502,8 @@ var goMetadataExpected = []GoMetadata{
 			"New",
 			"ClientAndConfig",
 			"WatcherForConfig",
-			"InitState",
-			"initAgent",
-			"ignoreExistingNamespacesForAgent",
-			"GetRegistryClientMTLSCert",
-			"needsCertRenewal",
-			"ShouldRenewRegistryCerts",
-			"ApplyRegistryClientCertSecret",
-			"ApplyZarfRegistryCertSecrets",
-			"LoadState",
-			"SaveState",
-			"GetIPFamily",
-			"InitRegistryCerts",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/testutil/registry.go",
 		Package: "testutil",
@@ -4494,7 +4524,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"SetupInMemoryRegistryDynamic",
 			"SetupInMemoryRegistry",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/testutil/testutil.go",
 		Package: "testutil",
@@ -4506,7 +4537,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestContext",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/testutil/paths.go",
 		Package: "testutil",
@@ -4523,7 +4555,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"ChecksumZarfYAMLContent",
 			"RequireNoBackslashInPackagePaths",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/testutil/ociregistry.go",
 		Package: "testutil",
@@ -4550,7 +4583,8 @@ var goMetadataExpected = []GoMetadata{
 			"PushImage",
 			"PushMultiArchIndex",
 			"PushNestedIndex",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/external/ext_out_cluster_test.go",
 		Package: "external",
@@ -4574,18 +4608,9 @@ var goMetadataExpected = []GoMetadata{
 			"helm.sh/helm/v4/pkg/repo/v1",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"TearDownSuite",
-			"Test_0_Mirror",
-			"Test_1_Deploy",
-			"Test_2_DeployGitOps",
-			"Test_3_AuthToPrivateHelmChart",
-			"Test_4_SubpathAgentTlsUpdate",
-			"Test_5_ReInitialize",
-			"createHelmChartInGitea",
-			"makeGiteaUserPrivate",
 			"TestExtOurClusterTestSuite",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/external/common.go",
 		Package: "external",
@@ -4604,7 +4629,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"createPodInfoPackageWithInsecureSources",
 			"waitForCondition",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/external/ext_in_cluster_test.go",
 		Package: "external",
@@ -4630,12 +4656,9 @@ var goMetadataExpected = []GoMetadata{
 			"sigs.k8s.io/cli-utils/pkg/object",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"TearDownSuite",
-			"Test_0_Mirror",
-			"Test_1_Deploy",
 			"TestExtInClusterTestSuite",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/upgrade/previously_built_test.go",
 		Package: "upgrade",
@@ -4650,7 +4673,8 @@ var goMetadataExpected = []GoMetadata{
 			"kubectl",
 			"zarf",
 			"TestPreviouslyBuiltZarfPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/common.go",
 		Package: "test",
@@ -4673,14 +4697,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"GetLogger",
 			"GetCLIName",
-			"GetZarfAtVersion",
-			"Zarf",
-			"ZarfInDir",
-			"Kubectl",
-			"CleanFiles",
-			"GetMismatchedArch",
-			"GetZarfVersion",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/proxy/main_test.go",
 		Package: "proxy",
@@ -4693,7 +4711,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestMain",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/proxy/proxy_test.go",
 		Package: "proxy",
@@ -4712,14 +4731,9 @@ var goMetadataExpected = []GoMetadata{
 			"k8s.io/apimachinery/pkg/apis/meta/v1",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"Test_0_RegistryProxyInit",
-			"Test_1_DeployRegularPackage",
-			"Test_2_UpdateCredsUpdatesMTLSSecrets",
-			"Test_3_OCIOpsPackage",
-			"Test_4_SwitchBetweenNodePort",
 			"TestRegistryProxy",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/nightly/ecr_publish_test.go",
 		Package: "test",
@@ -4735,7 +4749,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestECRPublishing",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/38_ephemeral_container_test.go",
 		Package: "test",
@@ -4747,7 +4762,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestEphemeralContainers",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/28_wait_test.go",
 		Package: "test",
@@ -4762,7 +4778,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"zarfCommandWStruct",
 			"TestNoWait",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/29_config_file_test.go",
 		Package: "test",
@@ -4777,7 +4794,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestConfigFileCreate",
 			"TestConfigFileDefault",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/44_image_archive_test.go",
 		Package: "test",
@@ -4790,7 +4808,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestImageArchivePush",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/02_component_actions_test.go",
 		Package: "test",
@@ -4803,7 +4822,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestComponentActions",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/09_component_compose_test.go",
 		Package: "test",
@@ -4821,7 +4841,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestComposabilityExample",
 			"TestFullComposability",
 			"TestComposabilityBadLocalOS",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/14_oci_compose_test.go",
 		Package: "test",
@@ -4851,16 +4872,9 @@ var goMetadataExpected = []GoMetadata{
 			"oras.land/oras-go/v2/registry/remote",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"TearDownSuite",
-			"Test_0_Publish_Skeletons",
-			"Test_1_Compose_Everything_Inception",
-			"Test_2_FilePaths",
-			"Test_3_Copy",
-			"DirOrFileExists",
-			"verifyComponentPaths",
 			"TestSkeletonSuite",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/26_simple_packages_test.go",
 		Package: "test",
@@ -4884,7 +4898,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestDosGames",
 			"TestManifests",
 			"TestAgentIgnore",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/24_variables_test.go",
 		Package: "test",
@@ -4897,7 +4912,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestVariables",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/37_component_status_test.go",
 		Package: "test",
@@ -4915,7 +4931,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestComponentStatus",
 			"getDeployedPackage",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/33_manifest_with_symlink_test.go",
 		Package: "test",
@@ -4927,7 +4944,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestManifestWithSymlink",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/10_component_flavor_test.go",
 		Package: "test",
@@ -4947,7 +4965,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestFlavorArchFiltering",
 			"TestPublishFlavor",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/05_tarball_test.go",
 		Package: "test",
@@ -4969,7 +4988,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestReproducibleTarballs",
 			"TestDeterministicOCIPull",
 			"TestPackageTarballDirectoryStructure",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/04_create_templating_test.go",
 		Package: "test",
@@ -4985,7 +5005,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCreateTemplating",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/40_namespace_override_test.go",
 		Package: "test",
@@ -5002,7 +5023,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestSingleNamespaceOverride",
 			"TestMultiNamespaceOverride",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/25_helm_test.go",
 		Package: "test",
@@ -5023,7 +5045,8 @@ var goMetadataExpected = []GoMetadata{
 			"testHelmUninstallRollback",
 			"testHelmAdoption",
 			"testHelmHooks",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/20_zarf_init_test.go",
 		Package: "test",
@@ -5042,7 +5065,8 @@ var goMetadataExpected = []GoMetadata{
 			"verifyZarfSecretLabels",
 			"verifyZarfPodLabels",
 			"verifyZarfServiceLabels",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/47_connected_deploy_test.go",
 		Package: "test",
@@ -5061,7 +5085,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestConnectedDeploy",
 			"TestDevDeploy",
 			"TestYOLOMode",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/00_use_cli_test.go",
 		Package: "test",
@@ -5087,7 +5112,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestTrustedRootCreate",
 			"TestUseCLI",
 			"TestBuildMachineInfo",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/34_custom_init_package_test.go",
 		Package: "test",
@@ -5099,7 +5125,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCustomInit",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/22_git_and_gitops_test.go",
 		Package: "test",
@@ -5127,7 +5154,8 @@ var goMetadataExpected = []GoMetadata{
 			"testGitServerTagAndHash",
 			"waitFluxPodInfoDeployment",
 			"waitArgoDeployment",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/11_oci_pull_inspect_test.go",
 		Package: "test",
@@ -5141,11 +5169,9 @@ var goMetadataExpected = []GoMetadata{
 			"oras.land/oras-go/v2/registry",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"Test_0_Pull",
-			"Test_1_Remote_Inspect",
 			"TestPullInspectSuite",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/31_checksum_and_signature_test.go",
 		Package: "test",
@@ -5156,7 +5182,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestChecksumAndSignature",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/12_package_signing_test.go",
 		Package: "test",
@@ -5168,7 +5195,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestPackageSigning",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/13_find_images_test.go",
 		Package: "test",
@@ -5181,7 +5209,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestFindImages",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/42_values_test.go",
 		Package: "test",
@@ -5194,7 +5223,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestValues",
 			"TestValuesSchema",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/13_zarf_package_generate_test.go",
 		Package: "test",
@@ -5208,7 +5238,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestZarfDevGenerate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/50_oci_publish_deploy_test.go",
 		Package: "test",
@@ -5223,13 +5254,9 @@ var goMetadataExpected = []GoMetadata{
 			"oras.land/oras-go/v2/registry",
 		},
 		Functions: []string{
-			"SetupSuite",
-			"TearDownSuite",
-			"Test_0_Publish",
-			"Test_1_Deploy",
-			"Test_2_Pull_And_Deploy",
 			"TestPublishDeploySuite",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/06_create_sbom_test.go",
 		Package: "test",
@@ -5245,7 +5272,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCreateSBOM",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/46_tools_wait_for_test.go",
 		Package: "test",
@@ -5256,7 +5284,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestWaitFor",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/01_component_choice_test.go",
 		Package: "test",
@@ -5268,7 +5297,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestComponentChoice",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/07_create_git_test.go",
 		Package: "test",
@@ -5282,7 +5312,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestCreateGit",
 			"verifyGitRepo",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/08_create_differential_test.go",
 		Package: "test",
@@ -5299,7 +5330,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCreateDifferential",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/03_deprecations_test.go",
 		Package: "test",
@@ -5316,7 +5348,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestDeprecatedComponentScripts",
 			"TestDeprecatedSetAndPackageVariables",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/45_volume_image_test.go",
 		Package: "test",
@@ -5330,7 +5363,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestVolumeImageMount",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/39_crane_to_oras_test.go",
 		Package: "test",
@@ -5345,7 +5379,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestCraneToORAS",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/27_deploy_regression_test.go",
 		Package: "test",
@@ -5356,7 +5391,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestGHCRDeploy",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/main_test.go",
 		Package: "test",
@@ -5370,7 +5406,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestMain",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/21_connect_creds_test.go",
 		Package: "test",
@@ -5391,7 +5428,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestConnectAndCreds",
 			"TestMetrics",
 			"connectToZarfServices",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/36_health_check_test.go",
 		Package: "test",
@@ -5403,7 +5441,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestHealthChecks",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/99_appliance_remove_test.go",
 		Package: "test",
@@ -5415,7 +5454,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestApplianceRemove",
 			"TestDestroy",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/30_component_action_cluster_test.go",
 		Package: "test",
@@ -5428,7 +5468,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestComponentActionRemove",
 			"TestComponentActionEdgeCases",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/23_data_injection_test.go",
 		Package: "test",
@@ -5446,7 +5487,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestDataInjection",
 			"runDataInjection",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/test/e2e/41_remove_test.go",
 		Package: "test",
@@ -5460,7 +5502,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestRemovePackageComponents",
 			"TestRemoveFailedPackagedComponents",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/internal/v1beta1/package.go",
 		Package: "v1beta1",
@@ -5468,12 +5511,8 @@ var goMetadataExpected = []GoMetadata{
 			"fmt",
 			"regexp",
 		},
-		Functions: []string{
-			"IsInitConfig",
-			"HasImages",
-			"IsSBOMAble",
-			"Validate",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/api/internal/v1beta1/translate.go",
 		Package: "v1beta1",
@@ -5490,7 +5529,8 @@ var goMetadataExpected = []GoMetadata{
 			"TranslateAlphaPackage",
 			"transformActionSet",
 			"transformActions",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/internal/v1beta1/translate_test.go",
 		Package: "v1beta1",
@@ -5504,17 +5544,16 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestTranslate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/internal/v1beta1/component.go",
 		Package: "v1beta1",
 		Imports: []string{
 			"k8s.io/apimachinery/pkg/apis/meta/v1",
 		},
-		Functions: []string{
-			"RequiresCluster",
-			"IsOptional",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/api/internal/v1beta1/package_test.go",
 		Package: "v1beta1",
@@ -5526,7 +5565,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestZarfPackageIsInitPackage",
 			"TestZarfPackageHasImages",
 			"TestZarfPackageIsSBOMable",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/v1alpha1/component_test.go",
 		Package: "v1alpha1",
@@ -5536,7 +5576,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestGetImages",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/v1alpha1/package.go",
 		Package: "v1alpha1",
@@ -5547,31 +5588,16 @@ var goMetadataExpected = []GoMetadata{
 			"slices",
 			"time",
 		},
-		Functions: []string{
-			"IsInitConfig",
-			"HasImages",
-			"IsSBOMAble",
-			"UniqueNamespaceCount",
-			"UniqueNamespaces",
-			"AllowsNamespaceOverride",
-			"Validate",
-		}},
+		Functions: []string{},
+	},
 	{
 		File:    "zarf/src/api/v1alpha1/component.go",
 		Package: "v1alpha1",
 		Imports: []string{},
 		Functions: []string{
-			"RequiresCluster",
-			"IsRequired",
-			"GetImages",
 			"SupportedOS",
-			"IsTemplate",
-			"ShouldRunSchemaValidation",
-			"GetServerSideApply",
-			"GetServerSideApply",
-			"IsTemplate",
-			"ShouldTemplate",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/api/v1alpha1/package_test.go",
 		Package: "v1alpha1",
@@ -5584,7 +5610,8 @@ var goMetadataExpected = []GoMetadata{
 			"TestZarfPackageHasImages",
 			"TestUniqueNamespaces",
 			"TestZarfPackageIsSBOMable",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/yq.go",
 		Package: "cmd",
@@ -5595,7 +5622,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newYQCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/say.go",
 		Package: "cmd",
@@ -5609,7 +5637,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"sayCommand",
 			"logo",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/viper.go",
 		Package: "cmd",
@@ -5632,7 +5661,8 @@ var goMetadataExpected = []GoMetadata{
 			"PrintViperConfigUsed",
 			"setDefaults",
 			"GetStringSlice",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/root.go",
 		Package: "cmd",
@@ -5655,9 +5685,6 @@ var goMetadataExpected = []GoMetadata{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 		},
 		Functions: []string{
-			"Set",
-			"String",
-			"Type",
 			"preRun",
 			"setupFeatures",
 			"mapToFeatures",
@@ -5667,7 +5694,8 @@ var goMetadataExpected = []GoMetadata{
 			"setupRootFlags",
 			"Execute",
 			"setupLogger",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/utils.go",
 		Package: "cmd",
@@ -5677,7 +5705,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"ReplaceCommandName",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/kubectl.go",
 		Package: "cmd",
@@ -5694,7 +5723,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newKubectlCommand",
 			"patchPluginListSubcommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/destroy.go",
 		Package: "cmd",
@@ -5715,8 +5745,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newDestroyCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/connect.go",
 		Package: "cmd",
@@ -5735,14 +5765,12 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newConnectCommand",
-			"run",
 			"waitForTunnel",
 			"newConnectResourceCommand",
-			"run",
 			"newConnectListCommand",
-			"run",
 			"printConnectStringTable",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/archiver.go",
 		Package: "cmd",
@@ -5754,10 +5782,9 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newArchiverCommand",
 			"newArchiverCompressCommand",
-			"run",
 			"newArchiverDecompressCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/package.go",
 		Package: "cmd",
@@ -5800,63 +5827,37 @@ var goMetadataExpected = []GoMetadata{
 			"newPackageCommand",
 			"newPackageCreateCommand",
 			"parseRegistryOverrides",
-			"run",
 			"newPackageDeployCommand",
-			"preRun",
-			"run",
 			"deploy",
 			"confirmDeploy",
 			"getPackageYAMLHints",
 			"newPackageMirrorResourcesCommand",
-			"preRun",
-			"run",
 			"newPackageInspectCommand",
 			"newPackageInspectValuesFilesOptions",
 			"newPackageInspectValuesFilesCommand",
-			"preRun",
-			"run",
 			"newPackageInspectManifestsOptions",
 			"newPackageInspectManifestsCommand",
-			"preRun",
-			"run",
 			"newPackageInspectSBOMOptions",
 			"newPackageInspectSBOMCommand",
-			"preRun",
-			"run",
 			"newPackageInspectImagesOptions",
 			"newPackageInspectImagesCommand",
-			"preRun",
-			"run",
 			"newPackageInspectDocumentationOptions",
 			"newPackageInspectDocumentationCommand",
-			"preRun",
-			"run",
 			"newPackageInspectDefinitionOptions",
 			"newPackageInspectDefinitionCommand",
-			"preRun",
-			"run",
 			"newPackageListOptions",
 			"newPackageListCommand",
-			"complete",
-			"run",
 			"newPackageRemoveCommand",
-			"preRun",
-			"run",
 			"newPackagePublishCommand",
-			"preRun",
-			"run",
 			"newPackagePullCommand",
-			"preRun",
-			"run",
 			"newPackageSignCommand",
-			"run",
 			"newPackageVerifyCommand",
-			"run",
 			"choosePackage",
 			"getPackageCompletionArgs",
 			"getVerificationStrategy",
 			"verifyBlobOptionsFromKeyPath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/wait.go",
 		Package: "cmd",
@@ -5871,12 +5872,10 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newWaitForCommand",
-			"run",
 			"newWaitForResourceCommand",
-			"run",
 			"newWaitForNetworkCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/dev_test.go",
 		Package: "cmd",
@@ -5893,7 +5892,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestDevInspectManifests",
 			"TestDevInspectValuesFiles",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/internal.go",
 		Package: "cmd",
@@ -5918,23 +5918,16 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newInternalCommand",
 			"newInternalAgentCommand",
-			"run",
 			"newInternalHTTPProxyCommand",
-			"run",
 			"newInternalGenCliDocsCommand",
-			"run",
 			"addHiddenDummyFlag",
 			"newInternalCreateReadOnlyGiteaUserCommand",
-			"run",
 			"newInternalCreateArtifactRegistryTokenCommand",
-			"run",
 			"newInternalUpdateGiteaPVCCommand",
-			"run",
 			"newInternalIsValidHostnameCommand",
-			"run",
 			"newInternalCrc32Command",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/syft.go",
 		Package: "cmd",
@@ -5946,7 +5939,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newSbomCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/tools_trustedroot_test.go",
 		Package: "cmd",
@@ -5959,7 +5953,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"TestTrustedRootTranslationCoverage",
 			"populateSentinels",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/cmd_test.go",
 		Package: "cmd",
@@ -5969,7 +5964,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestSetBaseDirectory",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/initialize.go",
 		Package: "cmd",
@@ -6004,14 +6000,10 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newInitCommand",
-			"preRun",
-			"run",
-			"findInitPackage",
-			"downloadInitPackage",
 			"validateExistingStateMatchesInput",
 			"loadAndValidateAgentTLS",
-			"validateInitFlags",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/helm.go",
 		Package: "cmd",
@@ -6025,7 +6017,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newHelmCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/version.go",
 		Package: "cmd",
@@ -6045,8 +6038,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newVersionOptions",
 			"newVersionCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/vendor.go",
 		Package: "cmd",
@@ -6061,12 +6054,18 @@ var goMetadataExpected = []GoMetadata{
 			"checkVendorOnlyFromArgs",
 			"checkVendorOnlyFromPath",
 			"IsVendorCmd",
-		}},
+		},
+	},
 	{
-		File:      "zarf/src/cmd/common.go",
-		Package:   "cmd",
-		Imports:   []string{"maps"},
-		Functions: []string{"mergeMap"}},
+		File:    "zarf/src/cmd/common.go",
+		Package: "cmd",
+		Imports: []string{
+			"maps",
+		},
+		Functions: []string{
+			"mergeMap",
+		},
+	},
 	{
 		File:    "zarf/src/cmd/k9s.go",
 		Package: "cmd",
@@ -6081,7 +6080,8 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newK9sCommand",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/table.go",
 		Package: "cmd",
@@ -6096,7 +6096,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"PrintFindings",
 			"colorWrap",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/dev.go",
 		Package: "cmd",
@@ -6136,28 +6137,19 @@ var goMetadataExpected = []GoMetadata{
 			"newDevCommand",
 			"newDevInspectCommand",
 			"newDevInspectDefinitionCommand",
-			"run",
 			"newDevInspectManifestsOptions",
 			"newDevInspectManifestsCommand",
-			"run",
 			"newDevInspectValuesFilesOptions",
 			"newDevInspectValuesFilesCommand",
-			"run",
 			"newDevDeployCommand",
-			"run",
 			"newDevGenerateCommand",
-			"run",
 			"newDevPatchGitCommand",
-			"run",
 			"newDevSha256SumCommand",
-			"run",
 			"newDevFindImagesCommand",
-			"run",
 			"newDevGenerateConfigCommand",
-			"run",
 			"newDevLintCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/package_test.go",
 		Package: "cmd",
@@ -6194,7 +6186,8 @@ var goMetadataExpected = []GoMetadata{
 			"checkPackageValuesInspectFiles",
 			"TestParseRegistryOverrides",
 			"TestPackageInspectDocumentation",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/zarf_tools.go",
 		Package: "cmd",
@@ -6229,22 +6222,16 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newGetCredsOptions",
 			"newGetCredsCommand",
-			"complete",
-			"run",
 			"printCredentialTable",
 			"printComponentCredential",
 			"newUpdateCredsCommand",
-			"run",
 			"printCredentialUpdates",
 			"newClearCacheCommand",
-			"run",
 			"newDownloadInitCommand",
-			"run",
 			"newGenPKICommand",
-			"run",
 			"newGenKeyCommand",
-			"run",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/crane.go",
 		Package: "cmd",
@@ -6272,18 +6259,16 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"newRegistryCommand",
-			"run",
 			"newRegistryLoginCommand",
 			"newRegistryCopyCommand",
 			"newRegistryCatalogCommand",
-			"run",
 			"getZarfRegistryMTLSTransport",
 			"newRegistryPruneCommand",
-			"run",
 			"doPruneImagesForPackages",
 			"isManifestUnknownError",
 			"zarfCraneInternalWrapper",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/tools_trustedroot.go",
 		Package: "cmd",
@@ -6300,7 +6285,8 @@ var goMetadataExpected = []GoMetadata{
 			"newTrustedRootCommand",
 			"newTrustedRootCreateCommand",
 			"optionsToCreateCmd",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/tools.go",
 		Package: "cmd",
@@ -6312,7 +6298,8 @@ var goMetadataExpected = []GoMetadata{
 		Functions: []string{
 			"newToolsCommand",
 			"newToolsVersionCmd",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/cmd.go",
 		Package: "cmd",
@@ -6329,7 +6316,8 @@ var goMetadataExpected = []GoMetadata{
 			"setBaseDirectory",
 			"defaultRemoteOptions",
 			"getCachePath",
-		}},
+		},
+	},
 	{
 		File:    "zarf/src/cmd/zarf_tools_test.go",
 		Package: "cmd",
@@ -6349,5 +6337,6 @@ var goMetadataExpected = []GoMetadata{
 		},
 		Functions: []string{
 			"TestGetCreds",
-		}},
+		},
+	},
 }

@@ -75,7 +75,10 @@ func GoMetadataFromFile(file string) (*GoMetadata, error) {
 			//	}
 			//}
 		case *ast.FuncDecl:
-			gm.Functions = append(gm.Functions, x.Name.Name)
+			// Skip methods (those have a receiver) — we only want package-level functions.
+			if x.Recv == nil {
+				gm.Functions = append(gm.Functions, x.Name.Name)
+			}
 
 		default:
 			fmt.Printf("%T\n", x)

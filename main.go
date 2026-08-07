@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	opts, err := parseFlags(flag.CommandLine.Args())
+	opts, err := parseFlags(os.Args[1:])
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -51,9 +51,10 @@ func parseFlags(args []string) (Options, error) {
 
 	fs := flag.NewFlagSet("AsteroidMermaid", flag.ContinueOnError)
 
-	fs.StringVar(&opts.LocalDir, "dir", "zarf/src/internal", "local directory of code to generate Mermaid document from")
+	fs.StringVar(&opts.LocalDir, "dir", "zarf/src/api", "local directory of code to generate Mermaid document from")
 	fs.StringVar(&opts.Module, "module", "github.com/zarf-dev/zarf", "Go module name belonging to dir (see go.mod)")
 
+	godump.Dump(args)
 	if err := fs.Parse(args); err != nil {
 		return Options{}, err
 	}

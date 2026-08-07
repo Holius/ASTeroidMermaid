@@ -9,7 +9,7 @@ import (
 	"github.com/holius/asteroid_mermaid/packagedata"
 )
 
-func GoPackagedataToMermaid(pdMap map[string]*packagedata.GoPackageDatea, moduleName string) string {
+func GoPackagedataToMermaid(pdMap map[string]*packagedata.GoPackageData, moduleName string) string {
 	moduleName = path.Dir(moduleName)
 	mermaid := "graph TD\n"
 

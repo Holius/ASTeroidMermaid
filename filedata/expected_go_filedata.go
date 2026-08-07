@@ -1,6 +1,6 @@
 package filedata
 
-var GoMetadataExpected = []GoMetadata{
+var GoFileDataExpected = []GoMetadata{
 	{
 		File:    "zarf/src/test/common.go",
 		Package: "test",

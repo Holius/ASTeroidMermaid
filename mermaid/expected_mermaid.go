@@ -3,7 +3,7 @@ package mermaid
 import "github.com/holius/asteroid_mermaid/packagedata"
 
 // the below data was modified from actual source code of Zarf
-var mermaidInput = map[string]*packagedata.GoPackageDatea{
+var mermaidInput = map[string]*packagedata.GoPackageData{
 	"zarf": {
 		Files:           []string{"zarf/main.go"},
 		Name:            "main",

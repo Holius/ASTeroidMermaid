@@ -1,6 +1,7 @@
 package packagedata
 
 import (
+	"fmt"
 	"path"
 	"slices"
 	"strings"
@@ -9,7 +10,7 @@ import (
 	"github.com/holius/asteroid_mermaid/filedata"
 )
 
-type GoPackageDatea struct {
+type GoPackageData struct {
 	Name             string   `json:"name"` // primary key
 	Files            []string `json:"files"`
 	PublicFunctions  []string `json:"public_functions"`
@@ -17,8 +18,8 @@ type GoPackageDatea struct {
 	Imports          []string `json:"import"` // foreign key
 }
 
-func GoPackageDataFromGoMetadata(gmSlice []filedata.GoMetadata, includeTests bool) (map[string]*GoPackageDatea, error) {
-	pgMap := map[string]*GoPackageDatea{}
+func GoPackageDataFromGoFileData(gmSlice []filedata.GoMetadata, includeTests bool) (map[string]*GoPackageData, error) {
+	pgMap := map[string]*GoPackageData{}
 
 	for _, gm := range gmSlice {
 		if strings.HasSuffix(gm.File, "_test.go") && !includeTests {
@@ -28,7 +29,7 @@ func GoPackageDataFromGoMetadata(gmSlice []filedata.GoMetadata, includeTests boo
 		primaryKey := path.Dir(gm.File)
 		pg, ok := pgMap[primaryKey]
 		if !ok {
-			pg = &GoPackageDatea{
+			pg = &GoPackageData{
 				Name:             gm.Package,
 				Files:            []string{},
 				PublicFunctions:  []string{},
@@ -44,16 +45,30 @@ func GoPackageDataFromGoMetadata(gmSlice []filedata.GoMetadata, includeTests boo
 				pg.Imports = append(pg.Imports, imp)
 			}
 		}
+		slices.Sort(gm.Imports)
 
 		for _, function := range gm.Functions {
-			if unicode.IsUpper(rune(function[0])) {
-				pg.PublicFunctions = append(pg.PublicFunctions, function)
-			} else {
+			if functionIsPrivate(function) {
 				pg.PrivateFunctions = append(pg.PrivateFunctions, function)
+			} else {
+				pg.PublicFunctions = append(pg.PublicFunctions, function)
 			}
 		}
 
 	}
 
 	return pgMap, nil
+}
+
+func functionIsPrivate(funcName string) bool {
+	dot := strings.Split(funcName, ".")
+	if len(dot) > 2 {
+		panic(fmt.Errorf("Unexpected funcName %s", funcName))
+	}
+
+	f := dot[len(dot)-1]
+	if unicode.IsUpper(rune(f[0])) {
+		return false
+	}
+	return true
 }

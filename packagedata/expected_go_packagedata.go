@@ -1,6 +1,6 @@
 package packagedata
 
-var GoPackageDataExpected = map[string]*GoPackageDatea{
+var GoPackageDataExpected = map[string]*GoPackageData{
 	// TODO is this correct behavior?
 	"zarf": {
 		Files:           []string{"zarf/main.go"},
@@ -26,12 +26,12 @@ var GoPackageDataExpected = map[string]*GoPackageDatea{
 		Name: "template",
 		PublicFunctions: []string{
 			"NewObjects",
-			"WithValues",
-			"WithMetadata",
-			"WithBuild",
-			"WithConstants",
-			"WithVariables",
-			"WithPackage",
+			"Objects.WithValues",
+			"Objects.WithMetadata",
+			"Objects.WithBuild",
+			"Objects.WithConstants",
+			"Objects.WithVariables",
+			"Objects.WithPackage",
 			"Apply",
 			"ApplyToFile",
 			"TestNewObjects",
@@ -131,18 +131,18 @@ var GoPackageDataExpected = map[string]*GoPackageDatea{
 	},
 	"zarf/src/internal/api/v1alpha1": {
 		Files: []string{
-			"zarf/src/internal/api/v1alpha1/validate_test.go",
 			"zarf/src/internal/api/v1alpha1/validate.go",
+			"zarf/src/internal/api/v1alpha1/validate_test.go",
 		},
 		Name: "v1alpha1",
 		PublicFunctions: []string{
+			"ValidatePackage",
 			"TestZarfPackageValidate",
 			"TestValidateManifest",
 			"TestValidateReleaseName",
 			"TestValidateChart",
 			"TestValidateComponentActions",
 			"TestValidateComponentAction",
-			"ValidatePackage",
 		},
 		PrivateFunctions: []string{
 			"validateActions",
@@ -211,18 +211,24 @@ var GoPackageDataExpected = map[string]*GoPackageDatea{
 	"zarf/src/internal/git": {
 		Files: []string{
 			"zarf/src/internal/git/repository.go",
+			"zarf/src/internal/git/repository_test.go",
+			"zarf/src/internal/git/fallback.go",
+			"zarf/src/internal/git/git.go",
 			"zarf/src/internal/git/git_test.go",
 		},
 		Name: "git",
 		PublicFunctions: []string{
 			"Open",
 			"Clone",
-			"Path",
-			"Push",
+			"Repository.Path",
+			"Repository.Push",
+			"TestRepository",
+			"ParseRef",
 			"TestParseRef",
 		},
 		PrivateFunctions: []string{
-			"checkoutRefAsBranch",
+			"Repository.checkoutRefAsBranch",
+			"Repository.gitCloneFallback",
 		},
 		Imports: []string{
 			"context",
@@ -242,11 +248,19 @@ var GoPackageDataExpected = map[string]*GoPackageDatea{
 			"github.com/zarf-dev/zarf/src/pkg/utils",
 			"testing",
 			"github.com/stretchr/testify/require",
+			"github.com/defenseunicorns/pkg/helpers/v2",
+			"github.com/fluxcd/gitkit",
+			"github.com/go-git/go-billy/v5/memfs",
+			"github.com/go-git/go-git/v5/storage/memory",
+			"github.com/zarf-dev/zarf/src/pkg/utils/exec",
+			"github.com/zarf-dev/zarf/src/test/testutil",
+			"net/http",
+			"net/http/httptest",
 		},
 	},
 }
 
-var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
+var goPackageDataExpectedWithoutTests = map[string]*GoPackageData{
 	"zarf": {
 		Files:           []string{"zarf/main.go"},
 		Name:            "main",
@@ -258,9 +272,9 @@ var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
 			"context",
 			"os",
 			"os/signal",
-			"syscall",
-			"github.com/zarf-dev/zarf/src/cmd",
 			"github.com/zarf-dev/zarf/src/config",
+			"github.com/zarf-dev/zarf/src/cmd",
+			"syscall",
 		},
 	},
 	"zarf/src/internal/template": {
@@ -270,12 +284,12 @@ var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
 		Name: "template",
 		PublicFunctions: []string{
 			"NewObjects",
-			"WithValues",
-			"WithMetadata",
-			"WithBuild",
-			"WithConstants",
-			"WithVariables",
-			"WithPackage",
+			"Objects.WithValues",
+			"Objects.WithMetadata",
+			"Objects.WithBuild",
+			"Objects.WithConstants",
+			"Objects.WithVariables",
+			"Objects.WithPackage",
 			"Apply",
 			"ApplyToFile",
 		},
@@ -400,24 +414,25 @@ var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
 	"zarf/src/internal/git": {
 		Files: []string{
 			"zarf/src/internal/git/repository.go",
+			"zarf/src/internal/git/fallback.go",
+			"zarf/src/internal/git/git.go",
 		},
 		Name: "git",
 		PublicFunctions: []string{
 			"Open",
 			"Clone",
-			"Path",
-			"Push",
+			"Repository.Path",
+			"Repository.Push",
+			"ParseRef",
 		},
 		PrivateFunctions: []string{
-			"checkoutRefAsBranch",
+			"Repository.checkoutRefAsBranch",
+			"Repository.gitCloneFallback",
 		},
 		Imports: []string{
 			"context",
 			"errors",
 			"fmt",
-			"os",
-			"path/filepath",
-			"strings",
 			"github.com/go-git/go-git/v5",
 			"github.com/go-git/go-git/v5/config",
 			"github.com/go-git/go-git/v5/plumbing",
@@ -427,6 +442,10 @@ var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
 			"github.com/zarf-dev/zarf/src/pkg/logger",
 			"github.com/zarf-dev/zarf/src/pkg/transform",
 			"github.com/zarf-dev/zarf/src/pkg/utils",
+			"os",
+			"path/filepath",
+			"strings",
+			"github.com/zarf-dev/zarf/src/pkg/utils/exec",
 		},
 	},
 }

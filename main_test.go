@@ -18,11 +18,11 @@ func TestGoMetadataFromDirectory(t *testing.T) {
 	slices.SortFunc(gm, func(a, b filedata.GoMetadata) int {
 		return cmp.Compare(a.File, b.File)
 	})
-	slices.SortFunc(filedata.GoMetadataExpected, func(a, b filedata.GoMetadata) int {
+	slices.SortFunc(filedata.GoFileDataExpected, func(a, b filedata.GoMetadata) int {
 		return cmp.Compare(a.File, b.File)
 	})
 	for i := range gm {
-		assert.Equal(t, filedata.GoMetadataExpected[i], gm[i])
+		assert.Equal(t, filedata.GoFileDataExpected[i], gm[i])
 		//if i == 1 {
 		//	break
 		//}

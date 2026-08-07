@@ -17,7 +17,7 @@ func main() {
 		panic(err)
 	}
 
-	gp, err := packagedata.GoPackageDataFromGoMetadata(gm, false)
+	gp, err := packagedata.GoPackageDataFromGoFileData(gm, false)
 	if err != nil {
 		panic(err)
 	}

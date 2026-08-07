@@ -1,6 +1,6 @@
 package main
 
-// the belodw data was modified from actual source code of Zarf
+// the below data was modified from actual source code of Zarf
 var mermaidInput = map[string]*GoPackagaedata{
 	"zarf": {
 		Files:           []string{"zarf/main.go"},

@@ -68,9 +68,10 @@ Change `main.go` to point to a different directory with Go Module and change `mo
 
 ## AWK Script
 
-The GNU AWK script was used to generate `expected_go_metadata.go`, and it required a few manual corrections
-because it cannot handle edge caes like functios that are a `generic`.
-It is not necessary to use it now.
+The GNU AWK script generates `expected_go_metadata.go` via `make awk`.
+This file is used in regression testing.  It is a secondary method of generating metadata
+to verify the Go code in different way with the belief that multiple methods of verification
+is better than one.
 
 ## Tests
 

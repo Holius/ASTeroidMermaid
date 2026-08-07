@@ -22,7 +22,6 @@ func GoPackagedataToMermaid(pdMap map[string]*packagedata.GoPackageData, moduleN
 
 	for i := range len(keys) {
 		primaryKey := keys[i]
-		fmt.Println(primaryKey)
 		pd := pdMap[primaryKey]
 		mermaid += fmt.Sprintf("  subgraph %s\n", primaryKey)
 		for _, pf := range pd.PublicFunctions {

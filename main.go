@@ -1,18 +1,26 @@
 package main
 
 import (
-	"encoding/json"
-	"io"
+	"errors"
+	"flag"
+	"fmt"
 	"os"
-	"reflect"
 
+	"github.com/goforj/godump"
 	"github.com/holius/asteroid_mermaid/filedata"
 	"github.com/holius/asteroid_mermaid/mermaid"
 	"github.com/holius/asteroid_mermaid/packagedata"
 )
 
 func main() {
-	gm, err := filedata.GoMetadataFromDirectory("zarf")
+	opts, err := parseFlags(flag.CommandLine.Args())
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	godump.Dump(opts)
+
+	gm, err := filedata.GoMetadataFromDirectory(opts.LocalDir)
 	if err != nil {
 		panic(err)
 	}
@@ -22,10 +30,7 @@ func main() {
 		panic(err)
 	}
 
-	// todo extract from go.mod
-	moduleName := "github.com/zarf-dev/zarf"
-
-	mermaid := mermaid.GoPackagedataToMermaid(gp, moduleName)
+	mermaid := mermaid.GoPackagedataToMermaid(gp, opts.Module)
 	om, err := os.Create("out.mermaid")
 	if err != nil {
 		panic(err)
@@ -36,25 +41,37 @@ func main() {
 	}
 }
 
-func getName(v any) string {
-	if v == nil {
-		return ""
-	}
-	t := reflect.TypeOf(v)
-
-	if t.Kind() == reflect.Ptr {
-		t = t.Elem()
-	}
-
-	return t.Name()
+type Options struct {
+	LocalDir string
+	Module   string
 }
 
-func WriteJSON(v any, w io.Writer) error {
-	encoder := json.NewEncoder(w)
-	encoder.SetIndent("", "  ")
-	return encoder.Encode(v)
-}
+func parseFlags(args []string) (Options, error) {
+	var opts Options
 
-func PrintJSONable(v any) {
-	WriteJSON(v, os.Stdout)
+	fs := flag.NewFlagSet("AsteroidMermaid", flag.ContinueOnError)
+
+	fs.StringVar(&opts.LocalDir, "dir", "zarf/src/internal", "local directory of code to generate Mermaid document from")
+	fs.StringVar(&opts.Module, "module", "github.com/zarf-dev/zarf", "Go module name belonging to dir (see go.mod)")
+
+	if err := fs.Parse(args); err != nil {
+		return Options{}, err
+	}
+
+	var dirSet, moduleSet bool
+
+	fs.Visit(func(f *flag.Flag) {
+		switch f.Name {
+		case "dir":
+			dirSet = true
+		case "module":
+			moduleSet = true
+		}
+	})
+
+	if dirSet != moduleSet {
+		return Options{}, errors.New("-dir and -module must be provided together")
+	}
+
+	return opts, nil
 }

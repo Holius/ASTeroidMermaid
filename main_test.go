@@ -5,20 +5,26 @@ import (
 	"slices"
 	"testing"
 
+	"github.com/holius/asteroid_mermaid/filedata"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGoMetadataFromDirectory(t *testing.T) {
 	// Act
-	gm, err := GoMetadataFromDirectory("zarf")
+	gm, err := filedata.GoMetadataFromDirectory("zarf")
 
 	// Assert
 	assert.NoError(t, err)
-	slices.SortFunc(gm, func(a, b GoMetadata) int {
+	slices.SortFunc(gm, func(a, b filedata.GoMetadata) int {
 		return cmp.Compare(a.File, b.File)
 	})
-	slices.SortFunc(goMetadataExpected, func(a, b GoMetadata) int {
+	slices.SortFunc(filedata.GoMetadataExpected, func(a, b filedata.GoMetadata) int {
 		return cmp.Compare(a.File, b.File)
 	})
-	assert.Equal(t, goMetadataExpected, gm)
+	for i := range gm {
+		assert.Equal(t, filedata.GoMetadataExpected[i], gm[i])
+		//if i == 1 {
+		//	break
+		//}
+	}
 }

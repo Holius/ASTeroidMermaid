@@ -1,6 +1,6 @@
-package main
+package packagedata
 
-var goPackageDataExpected = map[string]*GoPackagaedata{
+var GoPackageDataExpected = map[string]*GoPackageDatea{
 	// TODO is this correct behavior?
 	"zarf": {
 		Files:           []string{"zarf/main.go"},
@@ -246,7 +246,7 @@ var goPackageDataExpected = map[string]*GoPackagaedata{
 	},
 }
 
-var goPackageDataExpectedWithoutTests = map[string]*GoPackagaedata{
+var goPackageDataExpectedWithoutTests = map[string]*GoPackageDatea{
 	"zarf": {
 		Files:           []string{"zarf/main.go"},
 		Name:            "main",

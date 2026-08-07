@@ -1,6 +1,6 @@
-package main
+package filedata
 
-var goMetadataExpected = []GoMetadata{
+var GoMetadataExpected = []GoMetadata{
 	{
 		File:    "zarf/src/test/common.go",
 		Package: "test",
@@ -4733,7 +4733,7 @@ var goMetadataExpected = []GoMetadata{
 		Package: "cmd",
 		Imports: []string{"maps"},
 		Functions: []string{
-			"mergeMap(generic)",
+			"mergeMap",
 		}},
 	{
 		File:    "zarf/src/cmd/tools.go",

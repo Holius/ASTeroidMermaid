@@ -1,4 +1,4 @@
-module github.com/holius/ast_backwards
+module github.com/holius/asteroid_mermaid
 
 go 1.22.2
 

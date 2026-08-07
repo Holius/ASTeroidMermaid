@@ -1,13 +1,15 @@
-package main
+package packagedata
 
 import (
 	"path"
 	"slices"
 	"strings"
 	"unicode"
+
+	"github.com/holius/asteroid_mermaid/filedata"
 )
 
-type GoPackagaedata struct {
+type GoPackageDatea struct {
 	Name             string   `json:"name"` // primary key
 	Files            []string `json:"files"`
 	PublicFunctions  []string `json:"public_functions"`
@@ -15,8 +17,8 @@ type GoPackagaedata struct {
 	Imports          []string `json:"import"` // foreign key
 }
 
-func GoPackageDataFromGoMetadata(gmSlice []GoMetadata, includeTests bool) (map[string]*GoPackagaedata, error) {
-	pgMap := map[string]*GoPackagaedata{}
+func GoPackageDataFromGoMetadata(gmSlice []filedata.GoMetadata, includeTests bool) (map[string]*GoPackageDatea, error) {
+	pgMap := map[string]*GoPackageDatea{}
 
 	for _, gm := range gmSlice {
 		if strings.HasSuffix(gm.File, "_test.go") && !includeTests {
@@ -26,7 +28,7 @@ func GoPackageDataFromGoMetadata(gmSlice []GoMetadata, includeTests bool) (map[s
 		primaryKey := path.Dir(gm.File)
 		pg, ok := pgMap[primaryKey]
 		if !ok {
-			pg = &GoPackagaedata{
+			pg = &GoPackageDatea{
 				Name:             gm.Package,
 				Files:            []string{},
 				PublicFunctions:  []string{},

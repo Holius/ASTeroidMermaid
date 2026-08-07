@@ -51,7 +51,8 @@ $1 ~ "^func$" {
    # check for generic
    found = index($2, "[")
    if (found != 0) {
-     printf "\"%s(generic)\",\n",substr($2, 0, found - 1) 
+     # currently, nothing is printed to distinguish this function as "generic"
+     printf "\"%s\",\n",substr($2, 0, found - 1) 
      next
    }
 

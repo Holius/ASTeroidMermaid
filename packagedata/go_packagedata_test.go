@@ -1,8 +1,9 @@
-package main
+package packagedata
 
 import (
 	"testing"
 
+	"github.com/holius/asteroid_mermaid/filedata"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -10,17 +11,17 @@ import (
 func TestGoPackageDataFromGoMetadata(t *testing.T) {
 
 	// Act
-	pg, err := GoPackageDataFromGoMetadata(goMetadataExpected[:11], true)
+	pg, err := GoPackageDataFromGoMetadata(filedata.GoMetadataExpected[:11], true)
 
 	// Assert
 	assert.NoError(t, err)
-	assert.Equal(t, goPackageDataExpected, pg)
+	assert.Equal(t, GoPackageDataExpected, pg)
 }
 
 func TestGoPackageDataFromGoMetadataWithoutTests(t *testing.T) {
 
 	// Act
-	pg, err := GoPackageDataFromGoMetadata(goMetadataExpected[:11], false)
+	pg, err := GoPackageDataFromGoMetadata(filedata.GoMetadataExpected[:11], false)
 
 	// Assert
 	assert.NoError(t, err)

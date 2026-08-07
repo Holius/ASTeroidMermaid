@@ -4,7 +4,7 @@ This app maps public/exported functions in a package
 to other intra packages that it imports
 - "intra package" means a package that exists within the same module
 
-Below is expected test output from fake package data inspired by Zarf source code:
+Below is expected output from subset of Zarf source code; this shows that `v1alpha1` imports `v1beta1` (and showing all Public functions):
 ```mermaid
 graph TD
   subgraph zarf/src/api/internal/v1beta1

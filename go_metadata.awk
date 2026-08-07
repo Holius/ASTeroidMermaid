@@ -1,8 +1,8 @@
 #! /bin/awk -f
 
 BEGIN {
-  print "package main"
-  print "var goMetadataExpected = []GoMetadata{"
+  print "package filedata"
+  print "var GoFileDataExpected = []GoMetadata{"
 }
 
 BEGINFILE {

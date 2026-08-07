@@ -5,36 +5,105 @@ to other intra packages that it imports
 - "intra package" means a package that exists within the same module
 
 Below is expected output from subset of Zarf source code; this shows that `v1alpha1` imports `v1beta1` (and showing all Public functions):
+Using GitHub sss7526's [resistor](https://github.com/sss7526/resistor) project as an example of what an ASTeroid Mermaid generation looks like.  (Yes, the name was made up while very tired.)
 ```mermaid
 graph TD
-  subgraph zarf/src/api/internal/v1beta1
-  ZarfComponent.RequiresCluster
-  ZarfComponent.IsOptional
-  ZarfPackage.IsInitConfig
-  ZarfPackage.HasImages
-  ZarfPackage.IsSBOMAble
-  Constant.Validate
-  TranslateAlphaPackage
+  subgraph resistor
+  AnalyzeResistor
+  BandRole.String
+  BandRolesForCount
+  ValidColorsForRole
+  DecodeBands
+  EncodeBands
+  EncodeBandsSimple
+  Color.String
+  BodyColors
+  ESeries.String
+  ParseESeries
+  AllESeries
+  RoundingMode.String
+  ParseRoundingMode
+  AllRoundingModes
+  PackageType.String
+  ParsePackageType
+  AllPackageTypes
+  DigitColors
+  MultiplierColors
+  ToleranceColors
+  TempCoeffColors
+  NearestStandard
+  InferResistor
+  SelectStandardResistor
+  DecodeSMD
+  EncodeSMD
   end
-  zarf/src/api/internal/v1beta1 --> zarf/src/api/v1alpha1
-  subgraph zarf/src/api/v1alpha1
-  ZarfComponent.RequiresCluster
-  ZarfComponent.IsRequired
-  ZarfComponent.GetImages
-  SupportedOS
-  ZarfFile.IsTemplate
-  ZarfChart.ShouldRunSchemaValidation
-  ZarfChart.GetServerSideApply
-  ZarfManifest.GetServerSideApply
-  ZarfManifest.IsTemplate
-  ZarfComponentAction.ShouldTemplate
-  ZarfPackage.IsInitConfig
-  ZarfPackage.HasImages
-  ZarfPackage.IsSBOMAble
-  ZarfPackage.UniqueNamespaceCount
-  ZarfPackage.UniqueNamespaces
-  ZarfPackage.AllowsNamespaceOverride
-  Constant.Validate
+  subgraph resistor/cmd/resistor-cli
+  end
+  resistor/cmd/resistor-cli --> resistor/cmd/resistor-cli/cmd
+  subgraph resistor/cmd/resistor-cli/cmd
+  Execute
+  end
+  resistor/cmd/resistor-cli/cmd --> resistor
+  resistor/cmd/resistor-cli/cmd --> resistor/internal/cli
+  subgraph resistor/cmd/resistor-server
+  noDirFS.Open
+  end
+  resistor/cmd/resistor-server --> resistor/web
+  subgraph resistor/cmd/resistor-tui
+  end
+  resistor/cmd/resistor-tui --> resistor/cmd/resistor-tui/app
+  subgraph resistor/cmd/resistor-tui/app
+  NewAnalyzeView
+  AnalyzeView.Resize
+  AnalyzeView.Init
+  AnalyzeView.Update
+  AnalyzeView.View
+  BaseView.Resize
+  NewInferView
+  InferView.Resize
+  InferView.Init
+  InferView.Update
+  InferView.View
+  menuItem.Title
+  menuItem.Description
+  menuItem.FilterValue
+  NewMenu
+  MenuView.Resize
+  MenuView.Init
+  MenuView.Update
+  MenuView.View
+  New
+  AppModel.Init
+  AppModel.Update
+  AppModel.View
+  NewPlaceholderView
+  PlaceholderView.Init
+  PlaceholderView.Update
+  PlaceholderView.View
+  NewSelectView
+  SelectView.Resize
+  SelectView.Init
+  SelectView.Update
+  SelectView.View
+  NewSMDView
+  SMDView.Resize
+  SMDView.Init
+  SMDView.Update
+  SMDView.View
+  end
+  resistor/cmd/resistor-tui/app --> resistor
+  subgraph resistor/cmd/resistor-wasm
+  end
+  resistor/cmd/resistor-wasm --> resistor
+  subgraph resistor/internal/cli
+  PrintHeader
+  PrintBands
+  OutputJSONSuccess
+  OutputJSONError
+  Respond
+  end
+  resistor/internal/cli --> resistor
+  subgraph resistor/web
   end
 ```
 

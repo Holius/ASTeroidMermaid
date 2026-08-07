@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/goforj/godump"
 	"github.com/holius/asteroid_mermaid/filedata"
 	"github.com/holius/asteroid_mermaid/mermaid"
 	"github.com/holius/asteroid_mermaid/packagedata"
@@ -18,7 +17,6 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	godump.Dump(opts)
 
 	gm, err := filedata.GoMetadataFromDirectory(opts.LocalDir)
 	if err != nil {
@@ -54,7 +52,6 @@ func parseFlags(args []string) (Options, error) {
 	fs.StringVar(&opts.LocalDir, "dir", "zarf/src/api", "local directory of code to generate Mermaid document from")
 	fs.StringVar(&opts.Module, "module", "github.com/zarf-dev/zarf", "Go module name belonging to dir (see go.mod)")
 
-	godump.Dump(args)
 	if err := fs.Parse(args); err != nil {
 		return Options{}, err
 	}
